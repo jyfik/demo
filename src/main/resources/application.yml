@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: demo-rabbit
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:postgresql://localhost:5480/demo_rabbitmq
+    username: rabbitmq
+    password: demo
+    driver-class-name: org.postgresql.Driver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    topic: demo
+    template:
+      routing-key: stuff
+server:
+  servlet:
+    context-path: /demo
+  port: 9086
+
+demo:
+  version: 0.1

@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+################### SERVICES #######################
+
+  demo-rabbitmq-db:
+    ports:
+      - '5480:5432'
+
+################### COMMON SERVICES #######################
