@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+################### APPs #######################
+
+
+
+################### DBs #######################
+
+  demo-rabbitmq-db:
+    image: postgres:${POSTGRES_TAG:-10.3-alpine}
+    container_name: demo-rabbitmq-db
+    volumes:
+      - "./demorabbitmq/db/create:/docker-entrypoint-initdb.d:ro"
+
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: demo-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
